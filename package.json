@@ -1,0 +1,29 @@
+{
+  "name": "apizit-express-heavy-api",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "description": "Standalone express heavy reference API.",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "main": "src/main.cjs",
+  "scripts": {
+    "start": "node src/main.cjs",
+    "build": "node --check src/app.cjs && node --check src/main.cjs",
+    "check": "npm run build && prettier --check .",
+    "format": "prettier --write .",
+    "test": "npm run build && node --test tests/api.test.cjs",
+    "test:model": "npm run build && node --test tests/model.test.cjs"
+  },
+  "dependencies": {
+    "express": "5.2.1",
+    "@huggingface/transformers": "4.2.0",
+    "sharp": "0.34.5",
+    "multer": "2.3.0"
+  },
+  "devDependencies": {
+    "supertest": "7.2.2",
+    "prettier": "3.9.6"
+  }
+}
